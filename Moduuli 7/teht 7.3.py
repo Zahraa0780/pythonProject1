@@ -1,19 +1,38 @@
-lentoasemat = {}
+lentoasemat = {"EFHK" : "helsinki-vantaa lentoasema",
+               "LFPG":"Frnce lentoasema",
+               "EDDM":"Germany lentoasema",
+               "LIRA":"Italy lentoasema",
+               "EKCH":"Denmark lentoasema"}
+while True:
+    päätös = input("""
+uusi lentoasema: 
+hakea lentoasema: 
+lopeta: 
+  """)
+    if päätös == "uusi":
+      koodi = input("Anna ICAO-koodi: ")
+      kenttä = input("Anna lentoasema: ")
+      if koodi in lentoasemat:
+       print("koodi on jo olemassa. ")
+      else:
+       lentoasemat[koodi] = kenttä
+       print("uusi lentokenttä lisätty!")
 
-def lisaa_lentoasema():
-    icao_koodi = input("Syötä lentoaseman ICAO-koodi: ").strip().upper()
-    nimi = input("Syötä lentoaseman nimi: ").strip()
-    lentoasemat[icao_koodi] = nimi
-    print(f"Lentoasema {nimi} lisätty ICAO-koodilla {icao_koodi}.")
 
-def hae_lentoasema():
-    icao_koodi = input("Syötä haettavan lentoaseman ICAO-koodi: ").strip().upper()
-    if icao_koodi in lentoasemat:
-        print(f"Lentoaseman nimi: {lentoasemat[icao_koodi]}")
+    elif päätös == "hakea":
+        koodi = input("Anna ICAO-koodi: ")
+        if koodi in lentoasemat:
+         print(f"ICAO-koodi {koodi} on {lentoasemat[koodi]}")
+        if koodi not in lentoasemat:
+         print("valitettavasti, koodi ei löytää, yritä uudelleen tai lisää sitä. ")
+         päätös = input("""
+uusi lentoasema: 
+hakea lentoasema: 
+lopeta: 
+""")
+    elif päätös == "lopeta":
+        break
     else:
-        print("Lentoasemaa ei löytynyt annetulla ICAO-koodilla.")
+        print("Virheellinen valinta.yritä uudellen.")
 
-def main():
-    while True:
-        print("\nValitse toiminto:")
-        print
+print("lopettaa")
