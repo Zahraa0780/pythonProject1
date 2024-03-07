@@ -1,8 +1,8 @@
-lentoasemat = {"EFFI" : "helsinki-vantaa lentoasema",
-               "EFFR":"frnce lentoasema",
-               "EFDE":"germany lentoasema",
-               "EFit":"italy lentoasema",
-               "EFDK":"denmark lentoasema"}
+lentoasemat = {"EFHK" : "helsinki-vantaa lentoasema",
+               "LFPG":"frnce lentoasema",
+               "EDDM":"germany lentoasema",
+               "LIRA":"italy lentoasema",
+               "EKCH":"denmark lentoasema"}
 while True:
     päätös = input("""
 uusi lentoasema: 
